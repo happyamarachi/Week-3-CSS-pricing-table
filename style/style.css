@@ -1,0 +1,37 @@
+body{font-family:Inter,system-ui,sans-serif;background:#0f1115;color:#fff;min-height:100vh;display:grid;place-items:center;padding:40px 20px}
+.container{max-width:1100px;width:100%}
+h1{text-align:center;font-size:42px;margin-bottom:8px}
+.sub{text-align:center;color:#9aa0b2;margin-bottom:50px}
+
+/* GRID */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+/* CARD - uses subgrid for alignment */
+.card{
+  background:#1a1d26;border:1px solid #2a2f3f;border-radius:16px;
+  padding:28px;display:grid;grid-template-rows:subgrid;grid-row:span 4;
+  transition:.25s;cursor:pointer;position:relative
+}
+.card:hover{transform:translateY(-4px)}
+.card.active{border-color:#7c5cff;box-shadow:0 0 0 1px #7c5cff}
+.card.popular{border-color:#7c5cff;transform:translateY(-8px) scale(1.02);box-shadow:0 0 30px rgba(124,92,255,.3)}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#7c5cff;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700}
+
+/* 4 Aligned Sections */
+.header{padding-bottom:20px;border-bottom:1px solid #232736}
+.header p{color:#9aa0b2;font-size:14px;margin-top:6px;line-height:1.5}
+.price-sec{padding:20px 0;border-bottom:1px solid #232736}
+.price{font-size:36px;font-weight:800} .price span{font-size:16px;color:#9aa0b2;font-weight:400}
+.features{padding:20px 0}
+.features ul{list-style:none;display:grid;gap:12px;color:#d0d3de;font-size:14px}
+.features li::before{content:"✓ ";color:#7c5cff;font-weight:700}
+.action{margin-top:auto;padding-top:20px}
+.btn{width:100%;padding:14px;border-radius:10px;border:1px solid #2a2f3f;background:#242838;color:#fff;font-weight:600;cursor:pointer}
+.card.popular .btn,.card.active .btn{background:#7c5cff;border-color:#7c5cff}
+
+@media(max-width:900px){
+  .pricing-grid{grid-template-columns:1fr}
+  .card{grid-row:auto;grid-template-rows:auto}
+  .card.popular{transform:none}
+}
+</style>

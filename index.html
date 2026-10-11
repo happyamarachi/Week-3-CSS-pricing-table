@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>3-Card Pricing Table</title>
+<link rel="stylesheet"href="style/style.css" />
+</head>
+<body>
+<div class="container">
+  <h1>Pricing</h1>
+  <p class="sub">Choose the plan that fits your team</p>
+  
+  <div class="pricing-grid" id="grid">
+    <div class="card" data-plan="starter">
+      <div class="header"><h3>Starter</h3><p>Best for individuals & small projects</p></div>
+      <div class="price-sec"><div class="price">$9 <span>/month</span></div></div>
+      <div class="features"><ul><li>Up to 5 projects</li><li>1 user</li><li>Basic analytics</li><li>Email support</li></ul></div>
+      <div class="action"><button class="btn">Get Started</button></div>
+    </div>
+
+    <div class="card popular active" data-plan="pro">
+      <div class="badge">Most Popular</div>
+      <div class="header"><h3>Pro</h3><p>Best for growing teams that need more power and collaboration to scale fast</p></div>
+      <div class="price-sec"><div class="price">$29 <span>/month</span></div></div>
+      <div class="features"><ul><li>Up to 25 projects</li><li>5 users</li><li>Advanced analytics</li><li>Priority support</li><li>API access</li></ul></div>
+      <div class="action"><button class="btn">Get Started</button></div>
+    </div>
+
+    <div class="card" data-plan="enterprise">
+      <div class="header"><h3>Enterprise</h3><p>Best for large organizations</p></div>
+      <div class="price-sec"><div class="price">$99 <span>/month</span></div></div>
+      <div class="features"><ul><li>Unlimited projects</li><li>Unlimited users</li><li>Custom analytics</li><li>24/7 dedicated support</li><li>SSO & integrations</li></ul></div>
+      <div class="action"><button class="btn">Contact Sales</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+    card.classList.add('active');
+  })
+})
+</script>
+</body>
+</html>
